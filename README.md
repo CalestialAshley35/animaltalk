@@ -1,61 +1,69 @@
-# AnimalTalk v6.0.0 🦍
+# 🐾 AnimalTalk - Interactive Animal Chat Simulator (v6.0.0)
 
-Welcome to **AnimalTalk**! This is a fun and interactive chatbot that lets you chat with various animals such as cows, dogs, cats, and fish. Each animal has its own unique personality, fun responses, and even an ASCII art representation. 
+<div align="center">
+  <img src="https://img.shields.io/badge/Go-1.21+-00ADD8?logo=go" alt="Go Version">
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License">
+  <img src="https://img.shields.io/badge/Platform-Linux%2FmacOS%2FWindows-lightgrey" alt="Platform">
+</div>
 
-## Features
+A charming CLI-based chatbot that lets you converse with various animals using regular expression pattern matching and ASCII art. Each animal has its unique personality and response patterns!
 
-- **Animal Interactions:** Choose from a variety of animals, each with their own fun responses.
-- **Text-to-Speech Option:** Have your animal speak their response aloud (requires `espeak`).
-- **Regex-Based Responses:** The chatbot uses regular expressions to identify keywords and give fun, tailored responses based on your input.
-- **Multiple Animals to Chat With:** Includes Cow, Dog, Cat, and Fish, each with their own set of rules and responses.
-- **Interactive Console:** Continuously interact with your chosen animal until you decide to exit.
+## 🌟 Features
 
-## Installation
+- **Multi-Animal Support**: Chat with 4 different animals:
+  - 🐄 Philosophical Cow 
+  - 🐕 Energetic Dog
+  - 😼 Sassy Cat
+  - 🐠 Chill Fish
+- **Regex-Powered Responses**: Intelligent pattern matching for dynamic conversations
+- **ASCII Art Personalities**: Unique visual representation for each animal
+- **Text-to-Speech**: Optional TTS support for Cow conversations (Linux only)
+- **Contextual Understanding**: 100+ predefined response patterns
+- **Interactive CLI**: Simple and intuitive text-based interface
 
-To run **AnimalTalk**, follow these steps:
+## 🚀 Installation
 
-1. **Clone the repository**:
+### Prerequisites
+- Go 1.21+ installed
+- For TTS support (Cow conversations):
+  - Linux: `espeak` installed (`sudo apt-get install espeak`)
+  - macOS/Windows: TTS currently unsupported
 
-    ```bash
-    git clone https://github.com/CalestialAshley35/animaltalk.git
-    ```
+```bash
+git clone https://github.com/CalestialAshley35/animaltalk.git
+cd animaltalk
+go run animaltalk.go
+```
 
-2. **Navigate to the project directory**:
+## 🕹️ Usage
 
-    ```bash
-    cd animaltalk
-    ```
+1. Start the program:
+   ```bash
+   go run animaltalk.go
+   ```
+2. Choose an animal from the list
+3. Begin your conversation!
+4. Type `exit` at any time to quit
 
-3. **Run the Go program**:
+**Example Session:**
+```text
+Choose your animal (cow, dog, cat, fish): cow
+Do you want Text to Speech? (y/n): n
 
-    ```bash
-    go run animaltalk.go
-    ```
+        (__)
+         (oo)
+  /-------\/
+ / |     ||
+*  ||----||
+   ^^    ^^
+cow> hello
+Moo! Moo! I'm Mr. Cow 🐄🐮, the barn's life of the party!
+cow> 
+```
 
-4. **Follow the prompts** to interact with your chosen animal.
+## 📜 Responses List
 
-## How to Use
-
-1. **Choose Your Animal:**
-   - After starting the program, you will be prompted to choose an animal. You can type `cow`, `dog`, `cat`, or `fish`.
-
-2. **Animal's ASCII Art and Prompt:**
-   - Once you choose an animal, you’ll see their ASCII art and their unique prompt (e.g., `cow>`, `dog>`, etc.).
-
-3. **Chat with the Animal:**
-   - Type your message and the animal will respond based on predefined rules. If the animal recognizes keywords in your input, it will respond accordingly.
-   - If the input isn't recognized, the animal will ask you to try again.
-
-4. **Text-to-Speech Option:**
-   - If you choose the **cow**, you will be asked if you want to enable text-to-speech. If you answer `y`, the response will be spoken aloud using the `espeak` command.
-
-5. **Exit:**
-   - To exit the chatbot, simply type `exit`.
-
-## Animal Responses
-
-Each animal has a set of predefined responses based on regex patterns that match user input. For example:
-
+Here are few responses:
 - **Cow Responses:**  
   - "Hello" → "Moo! Moo! I'm Mr. Cow 🐄🐮, the barn's life of the party!"
   - "Dance" → "You bet! Watch me swing those hips in a moo-tastic two-step! 🕺💃"
@@ -71,37 +79,55 @@ Each animal has a set of predefined responses based on regex patterns that match
 - **Fish Responses:**  
   - "Hello" → "Blub! Blub! I'm just swimming by, no biggie. 🐠"
   - "Water" → "Water? It’s my entire world, you know! 🌊"
+ 
+All animal responses and conversation patterns are documented in [RESPONSES.md](RESPONSES.md). This includes:
+- All possible animal responses
 
-## Full Responses
+## 🔊 Text-to-Speech Feature
 
-For a full list of responses for each animal, please refer to `responses.md`. This document contains all of the keywords and matching responses for each animal, as well as other useful details.
+Exclusive to Cow conversations:
+- Enabled with `y` during cow selection
+- Uses `espeak` for Linux systems
+- Adds vocal dimension to interactions
+- Perfect for accessibility purposes
+- if you type n Cow will response in text rather than voice 
 
-## Requirements
+## 🛠️ Technical Details
 
-- **Go 1.x+**: This application is written in Go and requires a Go environment to run.
-- **espeak (optional)**: If you want to enable text-to-speech for the cow, ensure `espeak` is installed on your machine.
-
-### Installing `espeak` on Linux
-
-```bash
-sudo apt-get install espeak
+### Architecture
+```mermaid
+graph TD
+    A[User Input] --> B{Animal Selection}
+    B -->|Cow| C[TTS Check]
+    B -->|Other Animals| D[Direct Interaction]
+    C --> E[ASCII Display]
+    E --> F[Input Processing]
+    F --> G[Regex Matching]
+    G --> H[Response Generation]
+    H --> I[Output/TTS]
 ```
 
+### Pattern Matching System
+- Case-insensitive regex patterns
+- Word boundary detection (`\b` anchors)
+- Priority-based first-match system
+- Fallback to default response
 
-### Installing espeak on macOS
+## 🤝 Contributing
 
+We welcome contributions! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for:
+- Feature request guidelines
+- Bug report templates
+- Code style requirements
+- Pull request processes
+
+## 📄 License
+
+MIT License - See [LICENSE](LICENSE) for details.
+
+## 🐮 Acknowledgments
+
+- ASCII art from various online sources
+- Emoji support from Unicode Consortium
+- TTS powered by eSpeak NG
 ```
-brew install espeak
-```
-
-## Installing espeak on Windows
-
-Follow the espeak installation guide of Windows 
-
-## License
-
-This project is licensed under the MIT License - see the )ICENSE file for details.
-
----
-
-Enjoy chatting with your new animal friends and have fun with AnimalTalk! 🐄🐕🐱🐟
