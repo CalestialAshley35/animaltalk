@@ -21,19 +21,33 @@ A charming CLI-based chatbot that lets you converse with various animals using r
 - **Contextual Understanding**: 100+ predefined response patterns
 - **Interactive CLI**: Simple and intuitive text-based interface
 
-## 🚀 Installation
+## 🚀 Installation Guide
 
 ### Prerequisites
-- Go 1.21+ installed
-- For TTS support (Cow conversations):
-  - Linux: `espeak` installed (`sudo apt-get install espeak`)
-  - macOS/Windows: TTS currently unsupported
+To get started, make sure you have the following prerequisites installed:
 
-```bash
-git clone https://github.com/CalestialAshley35/animaltalk.git
+- **Go** version 1.21+  
+- **TTS Support (for Cow Conversations)**:
+  - **Linux**: Install `espeak` using:  
+    ```bash
+    sudo apt-get install espeak
+    ```
+  - **Windows/macOS**: Follow the installation steps from the [eSpeak official website](http://espeak.sourceforge.net/).
+
+---
+
+### Installation Instructions by Platform
+
+#### **Linux**  
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/CalestialAshley35/animaltalk.git
 cd animaltalk
 go run animaltalk.go
 ```
+
+- macOS: Download the binary from the [official release](https://github.com/CalestialAshley35/animaltalk/releases/tag/v6.0.0-for-macos)
+- Windows: Download the binary from the [official release](https://github.com/CalestialAshley35/animaltalk/releases/tag/v6.0.0)
 
 ## 🕹️ Usage
 
