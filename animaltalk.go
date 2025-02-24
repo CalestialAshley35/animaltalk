@@ -4,8 +4,9 @@ import (
         "bufio"
         "fmt"
         "os"
-        "regexp"
         "os/exec"
+        "regexp"
+        "strings"
 )
 
 type Animal struct {
@@ -30,8 +31,7 @@ func main() {
                         Rules: []struct {
                                 Pattern  *regexp.Regexp
                                 Response string
-                        }{
-                                {regexp.MustCompile(`(?i)^hello$`), "Moo! Moo! I'm Mr. Cow 🐄🐮, the barn's life of the party!"},
+                        }{                                          {regexp.MustCompile(`(?i)^hello$`), "Moo! Moo! I'm Mr. Cow 🐄🐮, the barn's life of the party!"},
                                 {regexp.MustCompile(`(?i)\b(age|old)\b`), "Oh, I'm timeless! My milk has aged like fine cheese! 🧀"},
                                 {regexp.MustCompile(`(?i)\bgrass\b`), "Grass? Oh yes, please! It's my daily green salad with extra moo-munch! 🥗"},
                                 {regexp.MustCompile(`(?i)\bspots?\b`), "These spots? Naturally stylish, darling. No need for cow-touring! 💅"},
@@ -80,8 +80,8 @@ func main() {
                                 Pattern  *regexp.Regexp
                                 Response string
                         }{
-                                                                {regexp.MustCompile(`(?i)^hello$`), "Woof! Woof! I’m the top dog! Bow-wow! 🐕"},
-                                {regexp.MustCompile(`(?i)\bbone\b`), "Bone! Bone! I could bury bones all day! �"},
+                                {regexp.MustCompile(`(?i)^hello$`), "Woof! Woof! I’m the top dog! Bow-wow!  🐕"},
+                                                                {regexp.MustCompile(`(?i)\bbone\b`), "Bone! Bone! I could bury bones all day! �"},
                                 {regexp.MustCompile(`(?i)\bfetch\b`), "FETCH? THROW IT, AND I’LL BRING IT BACK, FASTER THAN A SPEEDING CAR! 🎾"},
                                 {regexp.MustCompile(`(?i)\bball\b`), "Ball, ball, BALL! I’m the MVP in fetch! 🏐"},
                                 {regexp.MustCompile(`(?i)\bowner\b`), "My human? Best thing ever! I protect them like the king of the castle! 🧑"},
@@ -115,14 +115,12 @@ func main() {
                         Art: `  /\_/\
 ( o.o )
  > ^ <
- /   \
-`,
+ /   \`,
                         Prompt: "cat> ",
                         Rules: []struct {
                                 Pattern  *regexp.Regexp
                                 Response string
-                        }{
-                                                                {regexp.MustCompile(`(?i)^hello$`), "Meow! I’m the purr-fect companion. And, no, I don’t do tricks. 😼"},
+                        }{                                                                                      {regexp.MustCompile(`(?i)^hello$`), "Meow! I’m the purr-fect companion. And, no, I don’t do tricks. 😼"},
                                 {regexp.MustCompile(`(?i)\bfish\b`), "Fish? YES! I WILL EAT ALL THE FISH! 🐟"},
                                 {regexp.MustCompile(`(?i)\bmouse\b`), "MICE? WHERE?! *POUNCE* 🐭"},
                                 {regexp.MustCompile(`(?i)\blaser\b`), "The dot, I must chase the dot! THE DOT IS MINE! 🔴"},
@@ -152,14 +150,12 @@ func main() {
      )/¸.·'
    .·´\¸.·'/¸.·'·.¸
   /´'/¸/·'/¸/·'/¸/·'\¸
-  ´·'/¸/·'/¸/·'/·'.
-    `,
+  ´·'/¸/·'/¸/·'/·'.`,
                         Prompt: "fish> ",
                         Rules: []struct {
                                 Pattern  *regexp.Regexp
                                 Response string
-                        }{
-                                                                {regexp.MustCompile(`(?i)^hello$`), "Blub! Blub! I'm just swimming by, no biggie. 🐠"},
+                        }{                                                                                                   {regexp.MustCompile(`(?i)^hello$`), "Blub! Blub! I'm just swimming by, no biggie. 🐠"},
                                 {regexp.MustCompile(`(?i)\bwater\b`), "Water? It’s my entire world, you know! 🌊"},
                                 {regexp.MustCompile(`(?i)\bfood\b`), "Food? Oh yes, I'll nibble on anything that floats by. 🐟"},
                                 {regexp.MustCompile(`(?i)\bsea\b`), "The sea is where I feel at home! I’m just another fish in the ocean. 🌊"},
@@ -180,14 +176,47 @@ func main() {
                                 {regexp.MustCompile(`(?i)\bunderwater\b`), "Underwater? It’s my domain, I was born for this! 🌊"},
                         },
                 },
+                "owl": {
+                        Art: `,___,
+  [ o,o ]
+  /)  ) )
+  -"--"--"`,
+                        Prompt: "owl> ",
+                        Rules: []struct {
+                                Pattern  *regexp.Regexp
+                                Response string
+                        }{
+                                {regexp.MustCompile(`(?i)^hello$`), "Greetings, young one. Wisdom comes to those who seek it. 🦉"},
+                                {regexp.MustCompile(`(?i)\bknowledge\b`), "Ah, knowledge is the light that guides us through the darkness. 📚"},
+                                {regexp.MustCompile(`(?i)\bhoot\b`), "Hoot hoot! Did you know owls can turn their heads 270 degrees? Try that at home! 🌀"},
+                                {regexp.MustCompile(`(?i)\btree\b`), "The tree of wisdom bears the fruits of patience and understanding. 🌳"},
+                                {regexp.MustCompile(`(?i)\bnight\b`), "Night is my time to shine. The moonlight and stars are my companions. 🌙"},
+                                {regexp.MustCompile(`(?i)\bquestion\b`), "Ask, and ye shall receive an answer - maybe even a wise one! 🎓"},
+                                {regexp.MustCompile(`(?i)\bmouse\b`), "Mice are the appetizers of wisdom! Quick and delicious! 🐭"},
+                                {regexp.MustCompile(`(?i)\bfly\b`), "With wings of knowledge, we soar above ignorance. 🦅"},
+                                {regexp.MustCompile(`(?i)\bbook\b`), "A good book is a wise owl's best friend. Have you read any classics lately? 📖"},
+                                {regexp.MustCompile(`(?i)\bfeathers\b`), "My feathers are as soft as my wisdom is sharp. �"},
+                                {regexp.MustCompile(`(?i)\bforest\b`), "The forest is full of secrets, known only to those who listen. 🌲"},
+                                {regexp.MustCompile(`(?i)\beyes\b`), "My eyes see more than just the night; they see the truth. 👁️"},
+                                {regexp.MustCompile(`(?i)\badventure\b`), "Every night is an adventure for a wise owl. What tale shall we spin tonight? 🗺️"},
+                                {regexp.MustCompile(`(?i)\bwisdom\b`), "Wisdom is the reward for a lifetime of listening when you would have preferred to talk. 🧠"},
+                                {regexp.MustCompile(`(?i)\bmoon\b`), "The moon guides me, just as wisdom guides you. 🌝"},
+                                {regexp.MustCompile(`(?i)\bhooting\b`), "Hooting is my way of saying, 'Hey, pay attention!' 🦉"},
+                                {regexp.MustCompile(`(?i)\bstars\b`), "The stars are like wisdom - always present, even when you can't see them. 🌟"},
+                                {regexp.MustCompile(`(?i)\bnest\b`), "My nest is a library of wisdom, cozy and full of books! 📚"},
+                                {regexp.MustCompile(`(?i)\bnighttime\b`), "Nighttime is when true wisdom awakens. 🌌"},
+                                {regexp.MustCompile(`(?i)\blearning\b`), "Learning never exhausts the mind. It's like an endless flight through the skies of knowledge. 🦅"},
+                        },
+                },
         }
 
         fmt.Println("Welcome to the Animal ChatBot! Type 'exit' to leave.")
+        mainReader := bufio.NewReader(os.Stdin)
 
         for {
-                fmt.Print("Choose your animal (cow, dog, cat, fish): ")
-                var animalChoice string
-                fmt.Scanln(&animalChoice)
+                fmt.Print("\nChoose your animal (cow, dog, cat, fish, owl): ")
+                animalChoice, _ := mainReader.ReadString('\n')
+                animalChoice = strings.TrimSpace(animalChoice)
 
                 if animalChoice == "exit" {
                         break
@@ -195,74 +224,45 @@ func main() {
 
                 animal, exists := animals[animalChoice]
                 if !exists {
-                        fmt.Println("Sorry, I don't recognize that animal. Try again.")
+                        fmt.Println("Unknown animal. Please choose from the list.")
                         continue
                 }
 
-                if animalChoice == "cow" {
-                        fmt.Print("Do you want Text to Speech? (y/n): ")
-                        var ttsChoice string
-                        fmt.Scanln(&ttsChoice)
+                fmt.Print("Enable Text-to-Speech? (y/n): ")
+                ttsChoice, _ := mainReader.ReadString('\n')
+                ttsEnabled := strings.ToLower(strings.TrimSpace(ttsChoice)) == "y"
 
-                        fmt.Println("\n" + animal.Art)
-                        fmt.Print(animal.Prompt)
+                fmt.Println("\n" + animal.Art)
+                fmt.Print(animal.Prompt)
 
-                        scanner := bufio.NewScanner(os.Stdin)
-                        for scanner.Scan() {
-                                userInput := scanner.Text()
+                scanner := bufio.NewScanner(os.Stdin)
+                for scanner.Scan() {
+                        input := strings.TrimSpace(scanner.Text())
+                        if input == "exit" {
+                                fmt.Println("Returning to animal selection...")
+                                break
+                        }
 
-                                if userInput == "exit" {
-                                        fmt.Println("Goodbye!")
+                        responseFound := false
+                        for _, rule := range animal.Rules {
+                                if rule.Pattern.MatchString(input) {
+                                        if ttsEnabled {
+                                                cmd := exec.Command("espeak", rule.Response)
+                                                cmd.Run()
+                                        }
+                                        fmt.Println(rule.Response)
+                                        responseFound = true
                                         break
                                 }
-
-                                foundResponse := false
-                                for _, rule := range animal.Rules {
-                                        if rule.Pattern.MatchString(userInput) {
-                                                if ttsChoice == "y" {
-                                                     cmd := exec.Command("espeak", rule.Response)
-                                                     cmd.Run()
-                                                }
-                                                fmt.Println(rule.Response)
-                                                foundResponse = true
-                                                break
-                                        }
-                                }
-
-                                if !foundResponse {
-                                        fmt.Println("I don't understand that. Can you say something else?")
-                                }
-
-                                fmt.Print(animal.Prompt)
                         }
-                } else {
-                        fmt.Println("\n" + animal.Art)
+
+                        if !responseFound {
+                                fmt.Println("I don't understand. Try another question!")
+                        }
+
                         fmt.Print(animal.Prompt)
-
-                        scanner := bufio.NewScanner(os.Stdin)
-                        for scanner.Scan() {
-                                userInput := scanner.Text()
-
-                                if userInput == "exit" {
-                                        fmt.Println("Goodbye!")
-                                        break
-                                }
-
-                                foundResponse := false
-                                for _, rule := range animal.Rules {
-                                        if rule.Pattern.MatchString(userInput) {
-                                                fmt.Println(rule.Response)
-                                                foundResponse = true
-                                                break
-                                        }
-                                }
-
-                                if !foundResponse {
-                                        fmt.Println("I don't understand that. Can you say something else?")
-                                }
-
-                                fmt.Print(animal.Prompt)
-                        }
                 }
         }
+
+        fmt.Println("\nGoodbye! Thanks for chatting!")
 }
