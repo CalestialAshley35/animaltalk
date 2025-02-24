@@ -56,6 +56,21 @@ go run animaltalk.go
 - Windows: Download the executable from the [official release](https://sourceforge.net/projects/animaltalk/files/animaltalk7.exe/download)
 - FreeBSD: Download the Binary from [official release](https://sourceforge.net/projects/animaltalk/files/animaltalkforbsd/download)
 
+### Mobile OS
+
+- Android/iOS: you can use Termux for Android and iSH Shell for iOS, 
+1. Clone the repository:
+   ```bash
+   git clone 
+https://github.com/CalestialAshley35/termux-animaltalk.git
+cd termux-animaltalk
+```
+
+2. Run Installer Script:
+   ```bash
+bash install.sh
+```
+
 ## 🕹️ Usage
 
 1. Start the program:
