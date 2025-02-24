@@ -47,8 +47,8 @@ cd animaltalk
 go run animaltalk.go
 ```
 
-- macOS: Download the binary from the [official release](https://github.com/CalestialAshley35/animaltalk/releases/tag/v7.0.0-for-macos)
-- Windows: Download the binary from the [official release](https://github.com/CalestialAshley35/animaltalk/releases/tag/v7.0.0-for-windows)
+- macOS: Download the binary from the [official release](https://sourceforge.net/projects/animaltalk/files/animaltalk7/download)
+- Windows: Download the binary from the [official release](https://sourceforge.net/projects/animaltalk/files/animaltalk7.exe/download)
 
 ## 🕹️ Usage
 
