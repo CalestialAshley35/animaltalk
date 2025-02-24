@@ -47,7 +47,7 @@ To get started, make sure you have the following prerequisites installed:
 #### **Linux**  
 1. Clone the repository:
    ```bash
-   git clone https://github.com/CalestialAshley35/animaltalk.git
+git clone https://github.com/CalestialAshley35/animaltalk.git
 cd animaltalk
 go run animaltalk.go
 ```
@@ -61,8 +61,7 @@ go run animaltalk.go
 - Android/iOS: you can use Termux for Android and iSH Shell for iOS, 
 1. Clone the repository:
    ```bash
-   git clone 
-https://github.com/CalestialAshley35/termux-animaltalk.git
+git clone https://github.com/CalestialAshley35/termux-animaltalk.git
 cd termux-animaltalk
 ```
 
