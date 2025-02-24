@@ -33,6 +33,11 @@ To get started, make sure you have the following prerequisites installed:
     ```bash
     sudo apt-get install espeak
     ```
+   - **FreeBSD**: Install `espeak` using:  
+    ```bash
+    pkg install espack
+    ```
+
   - **Windows/macOS**: Follow the installation steps from the [eSpeak official website](http://espeak.sourceforge.net/).
 
 ---
@@ -48,7 +53,8 @@ go run animaltalk.go
 ```
 
 - macOS: Download the binary from the [official release](https://sourceforge.net/projects/animaltalk/files/animaltalk7/download)
-- Windows: Download the binary from the [official release](https://sourceforge.net/projects/animaltalk/files/animaltalk7.exe/download)
+- Windows: Download the executable from the [official release](https://sourceforge.net/projects/animaltalk/files/animaltalk7.exe/download)
+- FreeBSD: Download the Binary from [official release](https://sourceforge.net/projects/animaltalk/files/animaltalkforbsd/download)
 
 ## 🕹️ Usage
 
