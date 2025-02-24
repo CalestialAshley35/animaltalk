@@ -1,4 +1,4 @@
-# 🐾 AnimalTalk - Interactive Animal Chat Simulator (v6.0.0)
+# 🐾 AnimalTalk - Interactive Animal Chat Simulator (v7.0.0)
 
 <div align="center">
   <img src="https://img.shields.io/badge/Go-1.21+-00ADD8?logo=go" alt="Go Version">
@@ -15,9 +15,10 @@ A charming CLI-based chatbot that lets you converse with various animals using r
   - 🐕 Energetic Dog
   - 😼 Sassy Cat
   - 🐠 Chill Fish
+  - 🦉 Wise Owl
 - **Regex-Powered Responses**: Intelligent pattern matching for dynamic conversations
 - **ASCII Art Personalities**: Unique visual representation for each animal
-- **Text-to-Speech**: Optional TTS support for Cow conversations (Linux only)
+- **Text-to-Speech**: Optional TTS support for Each Animal
 - **Contextual Understanding**: 100+ predefined response patterns
 - **Interactive CLI**: Simple and intuitive text-based interface
 
@@ -27,7 +28,7 @@ A charming CLI-based chatbot that lets you converse with various animals using r
 To get started, make sure you have the following prerequisites installed:
 
 - **Go** version 1.21+  
-- **TTS Support (for Cow Conversations)**:
+- **TTS Support**:
   - **Linux**: Install `espeak` using:  
     ```bash
     sudo apt-get install espeak
@@ -46,8 +47,8 @@ cd animaltalk
 go run animaltalk.go
 ```
 
-- macOS: Download the binary from the [official release](https://github.com/CalestialAshley35/animaltalk/releases/tag/v6.0.0-for-macos)
-- Windows: Download the binary from the [official release](https://github.com/CalestialAshley35/animaltalk/releases/tag/v6.0.0)
+- macOS: Download the binary from the [official release](https://github.com/CalestialAshley35/animaltalk/releases/tag/v7.0.0-for-macos)
+- Windows: Download the binary from the [official release](https://github.com/CalestialAshley35/animaltalk/releases/tag/v7.0.0-for-windows)
 
 ## 🕹️ Usage
 
@@ -99,12 +100,11 @@ All animal responses and conversation patterns are documented in [RESPONSES.md](
 
 ## 🔊 Text-to-Speech Feature
 
-Exclusive to Cow conversations:
-- Enabled with `y` during cow selection
-- Uses `espeak` for Linux systems
+- Enabled with `y` during animal selection
+- Uses `espeak` for TTS
 - Adds vocal dimension to interactions
 - Perfect for accessibility purposes
-- if you type n Cow will response in text rather than voice 
+- if you type n The Animal will response in text rather than voice 
 
 ## 🛠️ Technical Details
 
@@ -144,4 +144,3 @@ MIT License - See [LICENSE](LICENSE) for details.
 - ASCII art from various online sources
 - Emoji support from Unicode Consortium
 - TTS powered by eSpeak NG
-```
