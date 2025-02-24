@@ -66,7 +66,7 @@ cd termux-animaltalk
 ```
 
 2. Run Installer Script:
-   ```bash
+```bash
 bash install.sh
 ```
 
