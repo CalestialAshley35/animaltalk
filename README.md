@@ -94,7 +94,11 @@ Here are few responses:
 - **Fish Responses:**  
   - "Hello" → "Blub! Blub! I'm just swimming by, no biggie. 🐠"
   - "Water" → "Water? It’s my entire world, you know! 🌊"
- 
+
+- **Wise Owl Responses:**  
+  - "Hello" → "Greetings, young one. Wisdom comes to those who seek it. 🦉"
+  - "Night** → "Night is my time to shine. The moonlight and stars are my companions. 🌙"
+
 All animal responses and conversation patterns are documented in [RESPONSES.md](RESPONSES.md). This includes:
 - All possible animal responses
 
